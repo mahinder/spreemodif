@@ -42,7 +42,8 @@ module Spree
         # Restore dates
         params[:q][:created_at_gt] = created_at_gt
         params[:q][:created_at_lt] = created_at_lt
-
+        @orders = @orders.collect{|order| order.partner_id = current_user.id} if current_user.has_spree_role?('partner')
+	@orders = @orders.collect{|order| order.salerepresentative_id = current_user.id} if current_user.has_spree_role?('representative') 
         respond_with(@orders)
       end
 
@@ -123,7 +124,7 @@ module Spree
         respond_with(@order) { |format| format.html { redirect_to :back } }
       end
 
-      private
+     private
 
         def load_order
           @order = Order.find_by_number!(params[:id], :include => :adjustments) if params[:id]
