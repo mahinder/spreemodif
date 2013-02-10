@@ -8,6 +8,9 @@ module Spree
                        :japanese => 'ja_JA' }
 
     def index
+	if current_user.has_spree_role?('representative') || current_user.has_spree_role?('partner')
+           redirect_to "/admin/orders/"	
+	end
       redirect_to admin_analytics_register_path unless Spree::Dash::Config.configured?
 
       if JIRAFE_LOCALES.values.include? params[:locale]

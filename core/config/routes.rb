@@ -192,7 +192,7 @@ Spree::Core::Engine.routes.draw do
   end
 
   match '/admin', :to => 'admin/orders#index', :as => :admin
-
+  match '/admin', :to => 'admin/orders#index', :as => :partner	
   match '/unauthorized', :to => 'home#unauthorized', :as => :unauthorized
   match '/content/cvv', :to => 'content#cvv', :as => :cvv
   match '/content/*path', :to => 'content#show', :via => :get, :as => :content
