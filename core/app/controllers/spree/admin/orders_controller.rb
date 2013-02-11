@@ -8,7 +8,6 @@ module Spree
       respond_to :html
 
       def index
-
         params[:q] ||= {}
         params[:q][:completed_at_not_null] ||= '1' if Spree::Config[:show_only_complete_orders_by_default]
         @show_only_completed = params[:q][:completed_at_not_null].present?
@@ -34,25 +33,16 @@ module Spree
           params[:q][:completed_at_gt] = params[:q].delete(:created_at_gt)
           params[:q][:completed_at_lt] = params[:q].delete(:created_at_lt)
         end
-
+	params[:q][:partner_id_eq] = current_user.id if current_user.has_spree_role?('partner') || current_user.has_spree_role?('representative') 
         @search = Order.accessible_by(current_ability, :index).ransack(params[:q])
         @orders = @search.result.includes([:user, :shipments, :payments]).
           page(params[:page]).
           per(params[:per_page] || Spree::Config[:orders_per_page])
-      
+
         # Restore dates
         params[:q][:created_at_gt] = created_at_gt
         params[:q][:created_at_lt] = created_at_lt
-        arr  = []
-        if current_user.has_spree_role?('representative') || current_user.has_spree_role?('partner') 
-	  @orders.each do |order|
-	     arr << order if order.partner_id == current_user.id && current_user.has_spree_role?('partner') 
-	     arr << order if order.salerepresentative_id == current_user.id && current_user.has_spree_role?('representative') 
-	  end
-	@orders = arr       
-	end 	
-	
-         
+
         respond_with(@orders)
       end
 
@@ -133,7 +123,7 @@ module Spree
         respond_with(@order) { |format| format.html { redirect_to :back } }
       end
 
-     private
+      private
 
         def load_order
           @order = Order.find_by_number!(params[:id], :include => :adjustments) if params[:id]
