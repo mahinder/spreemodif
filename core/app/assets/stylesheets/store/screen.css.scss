@@ -1180,4 +1180,392 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
     }
 
   }
+ul#products li a.info {
+  color: black !important;
+height: 45px !important;
+}
+ul#products li {
+background: goldenrod;
+}
 
+.container .three.columns {
+width: 150px !important;
+}
+
+ul#products li .product-image {
+margin-top: 3px;	
+}
+
+.pagination {
+  text-align: center;
+}
+  .page {
+    border-radius : 25px;
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+}
+    .current {
+      background-color: $c_green;
+      color: white;
+    }
+
+[data-hook="product_price"] {
+  margin-bottom: 24px;
+  border-bottom: 2px solid lighten(blue, 30);
+
+  #product-price {
+    float: left;
+    margin-right: 45px;
+    line-height: 34px;
+    padding-top: 2px;
+
+    .price {
+      font-size: 44px;
+    }
+  }
+
+  .add-to-cart {
+    float: right;
+    margin-top: 0;
+
+    #add-to-cart-button {
+      margin-left: 30px;
+    }
+  }
+}
+
+#product-properties {
+  border: none;
+
+  tr {
+
+    &.odd {
+      background-color: lighten(blue, 35);
+    }
+    td {
+      padding-left: 0;
+      font-size: 14px;
+
+      strong {
+        text-transform: uppercase;
+        color: blue;
+
+        &:after {
+          content: ':';
+        }
+      }
+    }
+  }
+}
+
+#main-image {
+  border: 2px solid lighten($c_green, 30) !important;
+  overflow: hidden;
+
+  &, img {
+    border-radius : 165px;
+  }
+
+  img {
+    padding: 46px 37px 46px 38px;
+  }
+}
+
+#product-thumbnails {
+  margin-right: -20px;
+
+  li {
+    border: none;
+    margin-right: 12px;
+
+    a {
+      border: 1px solid lighten($body_text_color, 30);
+      text-align: center;
+      display: block;
+      width: 70px;
+      height: 70px;
+       opacity : 0.7;
+
+      &:hover {
+         opacity : 1;
+        border-color: $c_green;
+      }
+
+      &, img {
+        border-radius : 165px;
+      }
+
+      img {
+        padding: 11px;
+      }
+    }
+
+    &.selected a {
+      opacity : 1;
+      border-color: $c_green;
+    }
+  }
+
+}
+#sidebar {
+background: whitesmoke;
+}
+
+#sidebar li , #similar_items_by_taxon li{
+height: auto;
+padding-left: 15px;
+height: 28px;
+line-height: 28px;
+font-size: 12px;
+padding-left: 10px;
+border-bottom: 1px solid #870e36;
+border-top: 1px solid #d64159;
+list-style-type: none;
+}
+#taxonomies {
+margin-left: 5px;
+}
+ .navigation{
+margin-left: 5px !important;
+}
+label {
+display: inline-block !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.progress-steps {
+  margin-left: 20px;
+  overflow: inherit;
+
+  li {
+    transition-duration : 0.3s ;
+    padding: 30px 20px;
+    margin-top: -20px;
+    margin-bottom: -20px;
+    margin-right: 0;
+    color: white;
+    font-size: 14px;
+
+    &.current, &.current-first, &.current-last {
+      single-box-shadow :darken($c_green, 10), 0, 0, 10px, 0;
+      background-color: orange;
+      color: white;
+      border-left: 5px solid lighten(orange, 8);
+      border-right: 5px solid lighten(orange, 8);
+    }    
+
+    &.current, &.current-first, &.current-last,
+    &.completed-first, &.completed-last, &.completed {
+      
+    }
+
+    &.completed-first, &.completed-last, &.completed {
+      background-color: lighten($c_green, 10);  
+      &, a {
+        color: lighten($c_green, 40);
+      }
+    }
+     
+  }  
+}
+
+#shipping_method {
+  p {
+    label {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }  
+}
+
+fieldset {
+  border: none !important;
+  border-top: 2px solid lighten(blue, 30) !important;
+
+  legend {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+  } 
+}
+
+#checkout-summary {
+  border: none;
+  text-align: left;
+  margin-top: -4px;
+  text-transform: uppercase;
+
+  h3 {
+    font-size: 16px !important;
+    font-weight: 600;
+    color: blue;
+    text-align: center;
+  }  
+
+  tr[data-hook="order_total"] {
+    td {
+      border-top: 2px solid lighten($c_green, 30);
+      color: $c_green;
+    }  
+  }
+}
+
+#summary-order-charges, #order-charges {
+  td {
+    font-size: 12px;
+    font-weight: 600;
+    
+    &:last-child, &:last-child span {
+      color: orange;
+    }
+    &:last-child { 
+      &:before {
+        content: '+ ';
+      } 
+    }
+  }  
+}
+
+#payment-methods fieldset {
+  border: none !important;  
+}
+
+.payment-method-selector.ui-buttonset {
+  text-align: center;  
+}
+
+[data-hook="checkout_form_wrapper"] {
+  .form-buttons {
+    text-align: center;
+  }  
+}
+
+#summary-order-total, [data-hook="order_details"] [data-hook="order_item_total"] span,
+#order_total {
+  color: $c_green !important;  
+  font-weight: 600 !important;
+}
+
+[data-hook="order_item_total"] {
+  text-align: center;  
+}
+
+[data-hook="order_details_total"] {
+  td {
+    border-top: 2px solid lighten(blue, 30);
+  }
+}
+
+fieldset#order_details hr {
+  display: none;
+}
+
+
+.cart-item-total, .order-total {
+  color: $c_green !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+}
+
+.cart-item-price {
+  font-weight: 400 !important;
+  font-size: 16px !important;
+}
+
+
+input[type="button"], input[type="submit"],
+button, .button, a.button, input[type="number"],
+input[type="text"], input[type="email"],
+input[type="password"], input[type="tel"],
+input[type="search"], 
+textarea {
+  border-radius :20px;
+  box-shadow :none;
+  transition-duration : 0.3s;
+  border-width: 3px;
+  padding: 7px 20px;
+  text-transform: uppercase;
+
+
+  &:hover {
+    background-color: $c_green;
+    color: white;
+    border-color: lighten($c_green, 30);  
+  }
+}
+
+select {
+  font-size: 16px;
+}
+
+#billing, #shipping {
+  select {
+    width: 93%;
+  }  
+}
+
+input[type="number"],
+input[type="text"], input[type="email"],
+input[type="password"], input[type="tel"],
+input[type="search"], textarea {
+  border-radius :8px;
+  text-transform: none;
+  color: $body_text_color;
+
+  &:hover {
+    background-color: white;  
+    color: $body_text_color;
+  }
+}
+
+fieldset {
+  font-size: 14px !important;  
+}
+
+form {
+  p, .field {
+    padding: 0;  
+  }   
+}
+
+label.ui-button {
+  border-radius : 15px;
+  transition-duration :0.3s;
+  border-width: 2px;
+  margin-right: 10px !important;
+  margin-bottom: 10px;
+  font-size: 12px;
+  background-image: none;    
+  color: blue;
+
+  &:hover {
+    background-color: blue;
+    color: white;
+  }
+
+  &.ui-state-active {
+    color: white;
+    background-color: $c_green;
+    border-color: darken($c_green, 5);
+  }
+
+  &:hover, &.ui-state-active {
+    .price.diff {
+      color: lighten(blue, 30);  
+    }  
+  }
+}
