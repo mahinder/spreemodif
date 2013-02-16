@@ -131,10 +131,11 @@
       <td class="align-center">
          <%= select_tag :partner, options_for_select(Spree::User.partner.map{|d| ["#{d.login}",d.id]},:selected => (order.partner_id || "")), :prompt => order.partner_id ? 'Unselect' : 'Select partner', :class => "assignpartener" ,:data_order => order.id%>
      </td>
-<%end%>
+
      <td class='actions align-center' data-hook="admin_orders_index_row_actions">
         <%= link_to_edit_url edit_admin_order_path(order), :title => "admin_edit_#{dom_id(order)}", :no_text => true %>
      </td>
+<%end%>
     </tr>
   <% end %>
   </tbody>

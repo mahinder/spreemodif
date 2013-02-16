@@ -34,7 +34,7 @@ module Spree
           params[:q][:completed_at_lt] = params[:q].delete(:created_at_lt)
         end
 	params[:q][:partner_id_eq] = current_user.id if current_user.has_spree_role?('partner') 
-	params[:q][:salerepresentative_id_eq] = current_user.id if  current_user.has_spree_role?('representative') 
+	#params[:q][:salerepresentative_id_eq] = current_user.id if  current_user.has_spree_role?('representative') 
         @search = Order.accessible_by(current_ability, :index).ransack(params[:q])
         @orders = @search.result.includes([:user, :shipments, :payments]).
           page(params[:page]).

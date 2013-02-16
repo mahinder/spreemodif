@@ -81,7 +81,7 @@ module Spree
 
           params[:q][:s] ||= "name asc"
 	  params[:q][:partner_id_eq] = current_user.id if current_user.has_spree_role?('partner') 
-	  params[:q][:salerepresentative_id_eq] = current_user.id if  current_user.has_spree_role?('representative') 
+	  #params[:q][:salerepresentative_id_eq] = current_user.id if  current_user.has_spree_role?('representative') 
           @search = super.ransack(params[:q])
           @collection = @search.result.
             group_by_products_id.
