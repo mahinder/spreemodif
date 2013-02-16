@@ -1,3 +1,9 @@
+<script type="text/javascript">
+function selectnew(a){
+    $('.neadqnsans').toggle()
+}
+</script>
+
 <div class="columns alpha six" data-hook="billing_fieldset_wrapper">
   <fieldset id="billing" data-hook>
     <%= form.fields_for :bill_address do |bill_form| %>
@@ -17,6 +23,23 @@
       </p>
       <%= render :partial => 'spree/address/form', :locals => { :form => ship_form, :address_type => 'shipping', :address => @order.ship_address } %>
     <% end %>
+  </fieldset>
+</div>
+<div class="columns omega six" data-hook=>
+  <fieldset  data-hook>
+ 	<p class="field checkbox">
+         <input type="checkbox" onclick="selectnew(1)">
+         <%= label_tag "Nead Identity","Nead Identity", :id => 'use_qns',:style => "background: none repeat scroll 0 0 white;
+   padding: 4px;"%>
+        </p>
+	<p class="field neadqnsans hide">
+    	 <%= form.label :qus, "Question" %><br />
+   	 <%= form.text_field :qus%>
+  	</p>
+	<p class="field neadqnsans hide">
+    	 <%= form.label :ans, "Answer" %><br />
+   	 <%= form.text_field :ans %>
+  	</p>
   </fieldset>
 </div>
 <hr class="clear" />

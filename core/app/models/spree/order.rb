@@ -32,7 +32,7 @@ module Spree
 
     attr_accessible :line_items, :bill_address_attributes, :ship_address_attributes, :payments_attributes,
                     :ship_address, :bill_address, :payments_attributes, :line_items_attributes, :number,
-                    :shipping_method_id, :email, :use_billing, :special_instructions, :currency
+                    :shipping_method_id, :email, :use_billing, :special_instructions, :currency,:ans,:qus
 
     if Spree.user_class
       belongs_to :user, :class_name => Spree.user_class.to_s

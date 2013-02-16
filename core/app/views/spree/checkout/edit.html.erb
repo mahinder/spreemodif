@@ -1,3 +1,12 @@
+<style>
+ .progress-steps li span{
+		color: black;
+}
+.error {
+ font-size: 19px !important;
+}
+</style>
+
 <% content_for :head do %>
   <%= javascript_include_tag states_url(:format => :js) %>
   <%= javascript_include_tag countries_url(:format => :js) %>
