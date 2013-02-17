@@ -17,5 +17,14 @@ module Spree
       mail(:to => order.email,
            :subject => subject)
     end
+
+    def assign_mail(order,user ,resend = false)
+	 @order = order
+      subject = (resend ? "[#{t(:resend).upcase}] " : '')
+      subject += "#{Spree::Config[:site_name]} You are assigned for order  ##{order.number}"
+      mail(:to => user.login,
+           :subject => subject)
+    end 	
+
   end
 end

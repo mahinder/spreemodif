@@ -35,6 +35,7 @@ module Spree
         end
 
         if @order.state == "complete" || @order.completed?
+	  Spree::OrderMailer.confirm_email(@order)
           flash.notice = t(:order_processed_successfully)
           flash[:commerce_tracking] = "nothing special"
           respond_with(@order, :location => completion_route)
