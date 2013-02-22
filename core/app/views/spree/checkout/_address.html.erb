@@ -3,8 +3,22 @@ function selectnew(a){
     $('.neadqnsans').toggle()
 }
 </script>
+<style>
+p[data-hook="use_billing"] {
+float: right;
+margin-top: -50px;
+background-color: #fff;
+padding: 5px;
+}
 
-<div class="columns alpha six" data-hook="billing_fieldset_wrapper">
+p[data-hook="use_identity"] {
+float: right;
+margin-top: -35px;
+background-color: #fff;
+padding: 5px;
+}
+</style>
+<div class="span3" data-hook="billing_fieldset_wrapper">
   <fieldset id="billing" data-hook>
     <%= form.fields_for :bill_address do |bill_form| %>
       <legend align="center"><%= t(:billing_address) %></legend>
@@ -13,7 +27,7 @@ function selectnew(a){
   </fieldset>
 </div>
 
-<div class="columns omega six" data-hook="shipping_fieldset_wrapper">
+<div class="span3" data-hook="shipping_fieldset_wrapper">
   <fieldset id="shipping" data-hook>
     <%= form.fields_for :ship_address do |ship_form| %>
       <legend align="center"><%= t(:shipping_address) %></legend>
@@ -25,19 +39,18 @@ function selectnew(a){
     <% end %>
   </fieldset>
 </div>
-<div class="columns omega six" data-hook=>
-  <fieldset  data-hook>
- 	<p class="field checkbox">
-         <input type="checkbox" onclick="selectnew(1)">
+<div class="span3" data-hook style="margin-top: 15px;">
+ <fieldset  id = "identity" data-hook>
+ 	<legend align="center" style = "color:blue;">Nead Identity</legend>
+ <p class="field checkbox" data-hook="use_identity">         
+	<input type="checkbox" onclick="selectnew(1)">
          <%= label_tag "Nead Identity","Nead Identity", :id => 'use_qns',:style => "background: none repeat scroll 0 0 white;
    padding: 4px;"%>
         </p>
-	<p class="field neadqnsans hide">
+	<p class="field neadqnsans hide" style = "margin-top: 16px;">
     	 <%= form.label :qus, "Question" %><br />
    	 <%= form.text_field :qus%>
-  	</p>
-	<p class="field neadqnsans hide">
-    	 <%= form.label :ans, "Answer" %><br />
+  	 <%= form.label :ans, "Answer" %><br />
    	 <%= form.text_field :ans %>
   	</p>
   </fieldset>

@@ -22,11 +22,11 @@
           <h5><%= t(:subtotal) %>: <span class="order-total"><%= @order.display_total %></span></h5>
         </div>
 
-        <div class="links columns sixteen alpha omega" data-hook="cart_buttons">
-          <%= button_tag :class => 'primary', :id => 'update-button' do %>
+        <div class="links columns sixteen alpha omega" data-hook="cart_buttons" style = "margin-right:580px;">
+          <%= button_tag :class => 'gray', :id => 'update-button' do %>
             <%= t(:update) %>
           <% end %>
-          <%= button_tag :class => 'button checkout primary', :id => 'checkout-link', :name => 'checkout' do %>
+          <%= button_tag :class => 'button checkout gray', :id => 'checkout-link', :name => 'checkout' do %>
             <%= t(:checkout) %>
           <% end %>
         </div>
