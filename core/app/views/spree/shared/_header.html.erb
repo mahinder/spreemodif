@@ -1,27 +1,24 @@
 <header id="header" class="row" data-hook>
-  
- <div class="navbar navbar-inverse">
+ <div class="navbar">
     <div class="navbar-inner">
       <div style="width: auto;" class="container">
-        <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a href="/" class="brand">Online Store</a>
         <div class="nav-collapse">
           <ul class="nav">
-	    <li id="home-link" class="active" data-hook><%= link_to t(:home), root_path %></li>
+	    
+<% get_taxonomies.each do |taxonomy| %>
+	<li id="home-link" class="active" data-hook><div class="btn-group">
+                <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><%= t(:shop_by_taxonomy, :taxonomy => taxonomy.name) %><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <%= taxons_tree(taxonomy.root, @taxon, Spree::Config[:max_level_in_taxons_menu] || 1) %>
+                </ul>
+              </div></li>	
+ <% end %>
+
+	    
           </ul>
-          <ul class=" nav pull-right" >
-           <li id="link-to-cart" data-hook><%= link_to_cart %></li>
-            <li class="divider-vertical"></li>
-	       <%= render :partial => 'spree/shared/nav_bar' %>
-         </ul>
-        </div><!-- /.nav-collapse -->
+       </div><!-- /.nav-collapse -->
       </div>
     </div><!-- /navbar-inner -->
   </div>
-  <%#= render :partial => 'spree/shared/nav_bar' %>
-  <%#= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
-</header>
+ </header>
+

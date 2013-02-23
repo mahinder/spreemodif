@@ -7,13 +7,37 @@
 <head data-hook="inside_head">
     <%= render :partial => 'spree/shared/head' %>
   </head>
-  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body" style = "background: url('/assets/ss.jpg') repeat scroll 0 0 transparent !important;" >
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body" >
 <script type="text/javascript">
       $(function(){
         $('.carousel').carousel();
+	$('.btn-group').on('click' , function(){
+		if($(this).hasClass('open')){$(this).removeClass('open')}else{$(this).addClass('open')}
+})
       });
   </script>
 <style>
+#search-bar {
+         margin-left: 0px!important; 
+      background : white !important;      
+    }
+.navbar {
+margin-left: 20px;
+width: 993px;
+margin-bottom: -22px;
+overflow: visible;
+}
+.nav-data li{
+font-size: 22px;
+margin: 16px;
+float : left;
+}
+.container-fluid {
+padding-right: 100px !important;
+padding-left: 101px !important;
+padding-top: 10px;
+}
+
 .carousel img {
 width : 100%;
 }
@@ -49,8 +73,37 @@ input.gray[type="submit"], input.gray[type="button"], input.gray[type="reset"], 
 font-family :"Ubuntu",sans-serif ;
 }
 </style>
+
+    <div class="container-fluid" >
+		
+	<div class = "row-fluid">
+		<div class = "span3">
+ 			<%= link_to image_tag("IUTFinalLogo.jpg") , "/" %>
+		</div>
+		<div class= "span1"></div>
+		<div class = "span8">
+ 			<div class = "row-fluid"></div>
+			<div class = "row-fluid">	   
+				<ul class=" nav pull-right nav-data" >
+	   				<li id="home-link" class="active " data-hook><%= link_to t(:home), root_path %></li>
+           				<li id="link-to-cart" data-hook><%= link_to_cart %></li>
+            				<li class="divider-vertical"></li>
+	       				<%= render :partial => 'spree/shared/nav_bar' %>
+         			</ul>
+
+			</div>
+			<div class = "row-fluid"></div> 
+		</div>
+	</div>
+	<div id="promo-sale-container" class="display-show" style="top: 130px;position: absolute;width: 993px;"><div id="promo-sale"><!-- InstanceBeginEditable name="Content" --><div class="column1" style = "float: left;"><img src="/assets/ribbon-left.png" width="550" height="28"></div>
+	<div class="column2"><img src="/assets/bow.png" width="153" height="104" style="float: left;margin-top: -17px;float: left;
+"></div>
+<div class="column3"><img src="/assets/ribbon-right.png" alt="Click For Details" width="290" height="28"></div></div>
+</div>
 <%= render :partial => 'spree/shared/header' %>
-    <div class="container-fluid">
+
+<br/>
+<div class="column5" style="position: absolute;margin-top: 302px; margin-left: 882px; -webkit-transform: rotate(376deg);"><img src="/assets/bow.png" width="153" height="104" style="float: left;margin-top: -17px;float: left;"></div>
 	<div class = "row-fluid">
 		<div class = "span12">
 			<div class="carousel slide">

@@ -1143,7 +1143,7 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
     #search-bar {
       display: block;
       text-align: center;
-
+	
       select {
         margin-bottom: 10px;
       }
@@ -1209,7 +1209,7 @@ margin-top: 3px;
     line-height: 24px;
 }
     .current {
-      background-color: $c_green;
+      background-color: rgb(220, 224, 214)!important;
       color: white;
     }
 
@@ -1311,9 +1311,7 @@ margin-top: 3px;
   }
 
 }
-#sidebar {
-background: whitesmoke;
-}
+
 
 #sidebar li , #similar_items_by_taxon li{
 height: auto;
@@ -1568,4 +1566,10 @@ label.ui-button {
       color: lighten(blue, 30);  
     }  
   }
+}
+#breadcrumbs li a {
+color: rgb(7, 45, 80) !important;
+}
+#sidebar {
+background: whitesmoke important;
 }
