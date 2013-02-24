@@ -522,13 +522,17 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
       margin-bottom: 15px;
     }
 
+input[type="submit"] {
+background : black !important;
+}
+
     .filter-title {
       display: block;
       font-weight: bold;
       text-transform: uppercase;
       border-bottom: 1px solid #ededed;
       margin-bottom: 5px;
-      color: $link_text_color;
+      color: black !important;
       font-size: $base_font_size + 2;
       line-height: 24px;
     }
@@ -1320,8 +1324,8 @@ height: 28px;
 line-height: 28px;
 font-size: 12px;
 padding-left: 10px;
-border-bottom: 1px solid #870e36;
-border-top: 1px solid #d64159;
+border-bottom: 1px solid rgb(243, 234, 237) !important;
+border-top: 1px solid rgb(241, 225, 227) !important;
 list-style-type: none;
 }
 #taxonomies {
@@ -1572,4 +1576,37 @@ color: rgb(7, 45, 80) !important;
 }
 #sidebar {
 background: whitesmoke important;
+}
+
+[data-hook="product_price"] #product-price .price {
+font-size: 31px !important; 
+}
+
+.add-to-cart input[type="number"] {
+margin-right: 0px !important;
+}
+
+[data-hook="product_price"] .add-to-cart {
+padding-top: 31px !important;
+padding-left: 19px;
+}
+
+#taxon-crumbs li {
+background: rgb(235, 231, 226) !important;
+}
+
+
+input {
+-moz-border-radius:10px !important; /* Firefox */
+-webkit-border-radius: 10px !important; /* Safari, Chrome */
+-khtml-border-radius: 10px !important; /* KHTML */
+border-radius: 10px !important; /* CSS3 */
+behavior:url("border-radius.htc");}
+
+
+
+#existing-customer , #new-customer , #forgot-password{
+padding-left: 347px;
+background: whitesmoke;
+padding-top: 16px;
 }

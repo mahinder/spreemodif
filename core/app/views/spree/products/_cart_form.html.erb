@@ -27,14 +27,15 @@
     <% end%>
 
     <% if @product.price_in(current_currency) and !@product.price.nil? %>
-      <div data-hook="product_price" class="columns five <% if !@product.has_variants? %> alpha <% else %> omega <% end %>">
-        
-        <div id="product-price">
+      <div data-hook="product_price" class="span12<% if !@product.has_variants? %> alpha <% else %> omega <% end %>">
+      
+        <div id="product-price" >
+  <div class = "span3">
           <h6 class="product-section-title"><%= t(:price) %></h6>
           <div><span class="price selling" itemprop="price"><%= @product.price_in(current_currency).display_price %></span></div>
-        </div>
-
-        <div class="add-to-cart">
+</div>
+<div class = "span9">
+        <div class="add-to-cart" >
           <% if @product.on_sale? %>      
             <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
               1, :class => 'title', :in => 1..@product.on_hand, :min => 1 %>
@@ -46,6 +47,10 @@
           <% end %>
         </div>
       </div>
+</div>
+</div>
+
+        
     <% else %>
         <div id="product-price">
           <br>
