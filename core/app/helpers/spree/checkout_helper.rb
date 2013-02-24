@@ -4,6 +4,13 @@ module Spree
       @order.checkout_steps
     end
 
+
+def get_taxonomies
+[]
+
+end
+
+
     def checkout_progress
       states = checkout_states
       items = states.map do |state|

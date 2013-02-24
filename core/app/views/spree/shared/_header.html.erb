@@ -4,7 +4,7 @@
       <div style="width: auto;" class="container">
         <div class="nav-collapse">
           <ul class="nav">
-<%if content_for? :sidebar %>	    
+<%unless get_taxonomies.blank? %>	    
 <% get_taxonomies.each do |taxonomy| %>
 	<li id="home-link" class="active" data-hook><div class="btn-group">
                 <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><%= t(:shop_by_taxonomy, :taxonomy => taxonomy.name) %><span class="caret"></span></button>
