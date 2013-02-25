@@ -1,9 +1,11 @@
-<header id="header" class="row" data-hook>
+<header id="header" class="row-fluid" data-hook>
  <div class="navbar">
     <div class="navbar-inner">
       <div style="width: auto;" class="container">
         <div class="nav-collapse">
+
           <ul class="nav">
+<%begin%>
 <%unless get_taxonomies.blank? %>	    
 <% get_taxonomies.each do |taxonomy| %>
 	<li id="home-link" class="active" data-hook><div class="btn-group">
@@ -14,7 +16,9 @@
               </div></li>	
  <% end %>
 <%end%>
-	    
+<%rescue%>
+
+<%end%>   
           </ul>
        </div><!-- /.nav-collapse -->
       </div>
