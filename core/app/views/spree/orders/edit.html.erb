@@ -39,10 +39,10 @@
 
   <div id="empty-cart" data-hook>
     <%= form_tag empty_cart_path, :method => :put do %>
-      <p id="clear_cart_link" data-hook style="margin-top: 75px;">
-        <%= submit_tag t(:empty_cart), :class => 'button gray' %>
+      <p id="clear_cart_link" data-hook style="margin-top: 23px;margin-left: 399px;">
+        <%= submit_tag t(:empty_cart), :class => 'button gray' ,:style=>"border-radius: 177px!important;"%>
         <%= t(:or) %>
-        <%= link_to t(:continue_shopping), products_path, :class => 'continue button gray' , :style=>"color: white;text-decoration: none;
+        <%= link_to t(:continue_shopping), products_path, :class => 'continue button gray' , :style=>"padding: 9px;color: white;text-decoration: none;
 "%>
       </p>
     <% end %>

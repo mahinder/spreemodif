@@ -18,7 +18,7 @@ background-color: #fff;
 padding: 5px;
 }
 </style>
-<div class="span3" data-hook="billing_fieldset_wrapper">
+<div class="span4" data-hook="billing_fieldset_wrapper">
   <fieldset id="billing" data-hook>
     <%= form.fields_for :bill_address do |bill_form| %>
       <legend align="center"><%= t(:billing_address) %></legend>
@@ -27,7 +27,7 @@ padding: 5px;
   </fieldset>
 </div>
 
-<div class="span3" data-hook="shipping_fieldset_wrapper">
+<div class="span4" data-hook="shipping_fieldset_wrapper">
   <fieldset id="shipping" data-hook>
     <%= form.fields_for :ship_address do |ship_form| %>
       <legend align="center"><%= t(:shipping_address) %></legend>

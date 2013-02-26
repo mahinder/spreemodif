@@ -3,9 +3,7 @@
 		color: black;
 }
 #checkout-summary {
-margin-top: -991px;
-margin-left: 303px;
-width: 167px;
+margin-top: 37px;
 }
 
 }
@@ -27,24 +25,24 @@ width: 167px;
     <div class="columns thirteen omega" data-hook="checkout_progress" style="margin-top: 27px;
 "><%= checkout_progress %></div>
   </div>
-  
-  <div class="row-fluid" data-hook="checkout_content">
-    <div class="columns <%= if @order.state != 'confirm' then 'span12' else 'alpha omega sixteen' end %>" data-hook="checkout_form_wrapper" style = "margin-top: 35px;">
-      <%= form_for @order, :url => update_checkout_path(@order.state), :html => { :id => "checkout_form_#{@order.state}" } do |form| %>
-        <% unless @order.email? %>
-          <p class="field" style='clear: both'>
-            <%= form.label :email %><br />
-            <%= form.text_field :email %>
-          </p>
-        <% end %>
-        <%= render @order.state, :form => form %>
-      <% end %>
-    </div>    
-    <% if @order.state != 'confirm' %>
+  <% if @order.state != 'confirm' %>
       <div id="checkout-summary" data-hook="checkout_summary_box" class="span3">
         <%= render :partial => 'summary', :locals => { :order => @order } %>
       </div>
-    <% end %>
+   <% end %>
+  <div class="row-fluid" data-hook="checkout_content">
+    <div class="columns <%= if @order.state != 'confirm' then 'span12' else 'alpha omega sixteen' end %>" data-hook="checkout_form_wrapper" style = "margin-top: 35px;">
+     	 <%= form_for @order, :url => update_checkout_path(@order.state), :html => { :id => "checkout_form_#{@order.state}" } do |form| %>
+		<% unless @order.email? %>
+		  <p class="field" style='clear: both'>
+		    <%= form.label :email %><br />
+		    <%= form.text_field :email %>
+		  </p>
+		<% end %>
+        		<%= render @order.state, :form => form %>
+      	  <% end %>
+    </div>    
+    
   </div>
 
 </div>
