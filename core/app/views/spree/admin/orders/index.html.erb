@@ -126,7 +126,7 @@
       <td class="align-center"><%= order.display_total %></td>
  <% if current_user.has_spree_role?('admin')%>      
 <td class="align-center">
-        <%= select_tag :representative, options_for_select(Spree::User.representative.map{|d| ["#{d.login}",d.id]},:selected => (order.salerepresentative_id || "")), :prompt => order.salerepresentative_id ? 'Unselect' : 'Select representative',:class => "assignpartener",:data_order => order.id%>
+        <%= select_tag :representative, options_for_select(Spree::User.representative.map{|d| ["#{d.login}",d.id]},:selected => (order.salerepresentative_id || "")), :prompt => order.salerepresentative_id ? 'Unselect' : 'Select representative',:class => "assignrep",:data_order => order.id%>
       </td>	
       <td class="align-center">
          <%= select_tag :partner, options_for_select(Spree::User.partner.map{|d| ["#{d.login}",d.id]},:selected => (order.partner_id || "")), :prompt => order.partner_id ? 'Unselect' : 'Select partner', :class => "assignpartener" ,:data_order => order.id%>
