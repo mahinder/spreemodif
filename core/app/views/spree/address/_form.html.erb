@@ -1,12 +1,12 @@
 <% address_id = address_type.chars.first %>
 <div class="inner" data-hook=<%="#{address_type}_inner" %>>
   <p class="field" id=<%="#{address_id}firstname" %>>
-    <%= form.label :firstname, t(:first_name) %><span class="required">*</span><br />
-    <%= form.text_field :firstname, :class => 'required' %>
+    <%#= form.label :firstname, t(:first_name) %><span class="required">*</span><br />
+    <%= form.text_field :firstname, :class => 'required' ,:placeholder => t(:first_name) %>
   </p>
   <p class="field" id=<%="#{address_id}lastname" %>>
-    <%= form.label :lastname, t(:last_name) %><span class="required">*</span><br />
-    <%= form.text_field :lastname, :class => 'required' %>
+    <%#= form.label :lastname, t(:last_name) %><span class="required">*</span><br />
+    <%= form.text_field :lastname, :class => 'required' ,:placeholder => t(:last_name)%>
   </p>
   <% if Spree::Config[:company] %>
     <p class="field" id=<%="#{address_id}company" %>>
@@ -15,16 +15,16 @@
     </p>
   <% end %>
   <p class="field" id=<%="#{address_id}address1" %>>
-    <%= form.label :address1, t(:street_address) %><span class="required">*</span><br />
-    <%= form.text_field :address1, :class => 'required' %>
+    <%#= form.label :address1, t(:street_address) %><span class="required">*</span><br />
+    <%= form.text_field :address1, :class => 'required' ,:placeholder => t(:street_address)%>
   </p>
   <p class="field" id=<%="#{address_id}address2" %>>
-    <%= form.label :address2, t(:street_address_2) %><br />
-    <%= form.text_field :address2 %>
+    <%#= form.label :address2, t(:street_address_2) %><br />
+    <%= form.text_field :address2 ,:placeholder => t(:street_address_2)%>
   </p>
   <p class="field" id=<%="#{address_id}city" %>>
-    <%= form.label :city, t(:city) %><span class="required">*</span><br />
-    <%= form.text_field :city, :class => 'required' %>
+    <%#= form.label :city, t(:city) %><span class="required">*</span><br />
+    <%= form.text_field :city, :class => 'required' ,:placeholder => t(:city)%>
   </p>
   <p class="field" id=<%="#{address_id}country" %>>
     <%= form.label :country_id, t(:country) %><span class="required">*</span><br />
@@ -59,17 +59,17 @@
   <% end %>
 
   <p class="field" id=<%="#{address_id}zipcode" %>>
-    <%= form.label :zipcode, t(:zip) %><span class="required">*</span><br />
-    <%= form.text_field :zipcode, :class => 'required' %>
+    <%#= form.label :zipcode, t(:zip) %><span class="required">*</span><br />
+    <%= form.text_field :zipcode, :class => 'required',:placeholder => t(:zip)  %>
   </p>
   <p class="field" id=<%="#{address_id}phone" %>>
-    <%= form.label :phone, t(:phone) %><span class="required">*</span><br />
-    <%= form.phone_field :phone, :class => 'required' %>
+    <%#= form.label :phone, t(:phone) %><span class="required">*</span><br />
+    <%= form.phone_field :phone, :class => 'required',:placeholder => t(:phone)  %>
   </p>
   <% if Spree::Config[:alternative_shipping_phone] %>
     <p class="field" id=<%="#{address_id}altphone" %>>
-      <%= form.label :alternative_phone, t(:alternative_phone) %><br />
-      <%= form.phone_field :alternative_phone %>
+      <%#= form.label :alternative_phone, t(:alternative_phone) %><br />
+      <%= form.phone_field :alternative_phone,:placeholder => t(:alternative_phone) %>
     </p>
   <% end %>
 </div>

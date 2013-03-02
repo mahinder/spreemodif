@@ -40,8 +40,8 @@ margin-top: 37px;
      	 <%= form_for @order, :url => update_checkout_path(@order.state), :html => { :id => "checkout_form_#{@order.state}" } do |form| %>
 		<% unless @order.email? %>
 		  <p class="field" style='clear: both'>
-		    <%= form.label :email %><br />
-		    <%= form.text_field :email %>
+		    <%#= form.label :email %><br />
+		    <%= form.text_field :email , :placeholder => "Email" %>
 		  </p>
 		<% end %>
         		<%= render @order.state, :form => form %>

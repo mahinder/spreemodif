@@ -48,10 +48,10 @@ padding: 5px;
    padding: 4px;"%>
         </p>
 	<p class="field neadqnsans hide" style = "margin-top: 16px;">
-    	 <%= form.label :qus, "Question" %><br />
-   	 <%= form.text_field :qus%>
-  	 <%= form.label :ans, "Answer" %><br />
-   	 <%= form.text_field :ans %>
+    	 <%#= form.label :qus, "Question" %><br />
+   	 <%= form.text_field :qus ,:placeholder => "Question" %>
+  	 <%#= form.label :ans, "Answer" %><br />
+   	 <%= form.text_field :ans ,:placeholder => "Answer"%>
   	</p>
   </fieldset>
 </div>

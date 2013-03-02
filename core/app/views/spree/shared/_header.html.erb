@@ -8,7 +8,7 @@
 <%begin%>
 <%unless get_taxonomies.blank? %>	    
 <% get_taxonomies.each do |taxonomy| %>
-	<li id="home-link" class="active" data-hook><div class="btn-group">
+	<li id="home-link" class="active" data-hook style = "margin-right: 10px;"><div class="btn-group">
                 <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><%= t(:shop_by_taxonomy, :taxonomy => taxonomy.name) %><span class="caret"></span></button>
                 <ul class="dropdown-menu">
                   <%= taxons_tree(taxonomy.root, @taxon, Spree::Config[:max_level_in_taxons_menu] || 1) %>
