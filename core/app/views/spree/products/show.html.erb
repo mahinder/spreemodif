@@ -1,4 +1,10 @@
+
+
 <style>
+hr{
+2px solid #99f;
+}
+
 [data-hook="product_price"] .add-to-cart {
 padding-top: 47px;
 }
@@ -25,12 +31,13 @@ font-family: "Ubuntu",sans-serif;
           <%= render :partial => 'thumbnails' %>
         </div>
       </div>
-
+	<hr/>
       <div data-hook="product_properties">
         <%= render :partial => 'properties' %>
       </div>
     
     </div>
+    
   </div>
 
   <div class="span5 offset1 omega" data-hook="product_right_part">
