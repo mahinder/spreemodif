@@ -10,6 +10,7 @@
 <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body" >
     <script type="text/javascript">
       $(function(){
+      	$('#guest_checkout input[type=submit]').css({'border': 'gray' , 'background':'gray'})
         $('.carousel').carousel();
       });
     </script>
