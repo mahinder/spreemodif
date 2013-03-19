@@ -10,10 +10,23 @@
 <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body" >
     <script type="text/javascript">
       $(function(){
+      	$('#guest_checkout input[type=submit]').css({'border': 'gray' , 'background':'gray'})
         $('.carousel').carousel();
       });
     </script>
     <style>
+    #guest_checkout input[type="submit"]{
+      background:gray !important;
+      border: gray !important;
+    }
+    
+    #guest_checkout{
+    	margin-left: -375px !important;
+	margin-top: 17px !important;
+    }
+    #existing-customer{
+    	width: 592px !important;    	
+    }
 	#header {
 		margin-top: 29px;
 	}
@@ -50,6 +63,11 @@
       .carousel img {
         width : 100%;
       }
+      .container .eight.columns {
+	width: 391px !important;
+       }
+	
+
     </style>
     <style>
       #breadcrumbs{background-color: #F5F5F5;
