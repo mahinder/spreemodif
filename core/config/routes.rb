@@ -3,9 +3,13 @@ Spree::Core::Engine.routes.draw do
   root :to => 'home#index'
 
   resources :products
-
+  resources :general
+   get "/about_us" , :to => 'general#about_us'
+ get "/contact_us" , :to => 'general#contact_us'
+ get "/services" , :to => 'general#our_services'
+ get "/private_polices" , :to => 'general#private_polices'
+ 
   match '/locale/set', :to => 'locale#set'
-
   resources :states, :only => :index
   resources :countries, :only => :index
 
