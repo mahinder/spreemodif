@@ -7,45 +7,48 @@
   <head data-hook="inside_head">
     <%= render :partial => 'spree/shared/head' %>
   </head>
-<body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body" >
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body" >
     <script type="text/javascript">
       $(function(){
-      	$('#guest_checkout input[type=submit]').css({'border': 'gray' , 'background':'gray'})
+        $('#guest_checkout input[type=submit]').css({'border': 'gray' , 'background':'gray'})
         $('.carousel').carousel();
       });
     </script>
     <style>
-    #guest_checkout input[type="submit"]{
-      background:gray !important;
-      border: gray !important;
-    }
-    
-    #guest_checkout{
-    	margin-left: -375px !important;
-	margin-top: 17px !important;
-    }
-    #existing-customer{
-    	width: 592px !important;    	
-    }
-	#header {
-		margin-top: 29px;
-	}
-	.progress-steps li.current-first, .progress-steps li.current {
-		background-color: #00adee!important;
-		color: #fff;
-		border-left: 5px solid #00adee;
-		border-right: 5px solid #00adee;
-	}
-	.progress-steps li span {
-		color: rgb(175, 137, 137)!important;
-	}
+      body{
+        margin-top: 41px;
+      }
+      #guest_checkout input[type="submit"]{
+        background:gray !important;
+        border: gray !important;
+      }
 
-.progress-steps li {
- color : black !important;
-}
+      #guest_checkout{
+        margin-left: -375px !important;
+        margin-top: 17px !important;
+      }
+      #existing-customer{
+        width: 592px !important;    	
+      }
+      #header {
+        margin-top: 29px;
+      }
+      .progress-steps li.current-first, .progress-steps li.current {
+        background-color: #00adee!important;
+        color: #fff;
+        border-left: 5px solid #00adee;
+        border-right: 5px solid #00adee;
+      }
+      .progress-steps li span {
+        color: rgb(175, 137, 137)!important;
+      }
+
+      .progress-steps li {
+        color : black !important;
+      }
       .nowrap{
-		margin-bottom: -4px!important;
-	}
+        margin-bottom: -4px!important;
+      }
       .add-to-cart #add-to-cart-button {
         margin-left: 0px!important;
       }
@@ -64,9 +67,9 @@
         width : 100%;
       }
       .container .eight.columns {
-	width: 391px !important;
-       }
-	
+        width: 391px !important;
+      }
+
 
     </style>
     <style>
@@ -100,17 +103,17 @@
         margin-top: 12px;
         font-family :"Ubuntu",sans-serif ;
       }
-.btn-group .taxons-list li {margin-left: -24px;
-padding-left: 20px;}
-#reviews a {
-background-color: #8dba53;
-color: white;
-border-color: #d5e6c0;
-}
+      .btn-group .taxons-list li {margin-left: -24px;
+                                  padding-left: 20px;}
+      #reviews a {
+        background-color: #8dba53;
+        color: white;
+        border-color: #d5e6c0;
+      }
 
-.form-buttons input{background-color: #8dba53;
-color: white;
-border-color: #d5e6c0;}
+      .form-buttons input{background-color: #8dba53;
+                          color: white;
+                          border-color: #d5e6c0;}
 
 
       #checkout
@@ -118,16 +121,16 @@ border-color: #d5e6c0;}
        padding-left: 6px;
        padding-top: 6px;}
 
-#main-image {
-border: 0px !important;}
+      #main-image {
+        border: 0px !important;}
 
-#product-thumbnails li a{
-border-radius: 0 !important;
-}
+      #product-thumbnails li a{
+        border-radius: 0 !important;
+      }
 
-      </style>
-      
-  <div class="navbar navbar-fixed-top">
+    </style>
+
+    <div class="navbar navbar-fixed-top">
       <div class="navbar-inner"style = "background : rgb(230, 230, 230);" >
         <div class="container">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -139,64 +142,104 @@ border-radius: 0 !important;
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active"><%= link_to root_path do %><i class="icon-home"></i>&nbsp;<%=t(:home)%> <%end%></li>
-			  <li><a href="/about_us"><i class="icon-info-sign"></i> About Us</a></li>
+              <li><a href="/about_us"><i class="icon-info-sign"></i> About Us</a></li>
               <li><a href="/contact_us"><i class="icon-book"></i> Contact us</a></li>
-			  <li><a href="/services"><i class="icon-upload"></i> services</a></li>
-			  <li id="link-to-cart" data-hook><%= link_to_cart  do %> <i class="icon-upload"></i><%end%></li>
-			  <%= render :partial => 'spree/shared/nav_bar' %>
+              <li><a href="/services"><i class="icon-upload"></i> services</a></li>
+              <li id="link-to-cart" data-hook><%= link_to_cart  do %> <i class="icon-upload"></i><%end%></li>
+              <%= render :partial => 'spree/shared/nav_bar' %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>      
-      
-<div class="container" >
-  <div class = "row-fluid">	
-  	<div class = "row-fluid">
-	   <div class = "span3">
-    		<%= link_to image_tag("IUTFinalLogo.jpg",:width => "220") , "/" %>
-  	   </div>
- 	   <div class = "span9" style = "margin-left: 16px;">
-    	     <div class = "row-fluid">	   
-		<%= render :partial => 'spree/shared/search' %>
-	     </div> 
-  	   </div>
-	</div>
-	<div id="promo-sale-container" class="row-fluid" style="top: 83px;position: absolute;">
-	  <div id="promo-sale"><!--InstanceBeginEditable name="Content" -->
-		<div class="column1" style = "float: left;"><img src="/assets/ribbon-left.png" width="520" height="28"></div>
-    		<div class="column2"><img src="/assets/bow.png" width="153" height="104" style="float: left;margin-top: -17px;float: left;"></div>
-    		<div class="column3"><img src="/assets/ribbon-right.png" alt="Click For Details" width="267" height="28"></div>
-	  </div>
-	</div>
-	<%= render :partial => 'spree/shared/header' %>
-<br/>
-    <div id="wrapper" class="row-fluid" data-hook>
-      <%= breadcrumbs(@taxon) %>
-      <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
-      <div id="content" class="span<%= !content_for?(:sidebar) ? '12' : '8' %>" data-hook>
-        <%= flash_messages %>
-        <%= yield %>
+
+    <div class="container" >
+      <div class = "row-fluid">	
+        <div class = "row-fluid">
+          <div class = "span3">
+            <%= link_to image_tag("IUTFinalLogo.jpg",:width => "220") , "/" %>
+          </div>
+          <div class = "span9" style = "margin-left: 16px;">
+            <div class = "row-fluid">	   
+              <%= render :partial => 'spree/shared/search' %>
+            </div> 
+          </div>
+        </div>
+        <div id="promo-sale-container" class="row-fluid" style="top: 83px;position: absolute;">
+          <div id="promo-sale"><!--InstanceBeginEditable name="Content" -->
+            <div class="column1" style = "float: left;"><img src="/assets/ribbon-left.png" width="520" height="28"></div>
+            <div class="column2"><img src="/assets/bow.png" width="153" height="104" style="float: left;margin-top: -17px;float: left;"></div>
+            <div class="column3"><img src="/assets/ribbon-right.png" alt="Click For Details" width="267" height="28"></div>
+          </div>
+        </div>
+        <%= render :partial => 'spree/shared/header' %>
+        <br/>
+        <div id="wrapper" class="row-fluid" data-hook>
+          <%= breadcrumbs(@taxon) %>
+          <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
+          <div id="content" class="span<%= !content_for?(:sidebar) ? '12' : '8' %>" data-hook>
+            <%= flash_messages %>
+            <%= yield %>
+          </div>
+        </div>
+        <%#= render :partial => 'spree/shared/footer' %>
       </div>
+      <%= render :partial => 'spree/shared/google_analytics' %>
     </div>
-	<%#= render :partial => 'spree/shared/footer' %>
+
+
+
+
+<footer class="footer" style="background-color:#c2c2c2;">
+    <div class="container" style="margin:0 auto;">
+        <div class="row">
+            <div class="span2 offset2">
+                <h4 style="text-align: left;">Company</h4>
+                <ul style="text-align: left;">
+                    <li><a href="/about_us">About Us</a></li>
+                    <li><a href="/contact_us">Contact</a></li>
+                </ul>
+            </div>
+            <div class="span2 offset1">
+                <h4 style="text-align: left;">Resource</h4>
+                <ul style="text-align: left;">
+                    <li><a href="">Affilates</a></li>
+                    <li><a href="">FAQ</a></li>
+                    <li><a href="">Donation</a></li>
+                    <li><a href="">site Map</a></li>
+                </ul >
+            </div>
+            <div class="span2 offset1">
+                <h4 style="text-align: left;">Connect</h4>
+                <ul style="text-align: left;">
+                    <li><a href="" title="Facebook">Facebook</a></li>
+                    <li><a href="" title="Twitter">Twitter</a></li>
+                    <li><a href="" title="LinkedIn">LinkedIn</a></li>
+                    <li><a href="" title="Google+">Google+</a></li>
+                    <li><a href="" title="RSS">RSS</a></li>
+                    
+                </ul>
+            </div>
+        </div>
     </div>
-	  <%= render :partial => 'spree/shared/google_analytics' %>
-</div>
-
-    
-
-
-<footer id="footer" class="sixteen columns" data-hook style = "background: whitesmoke;">
- 
 </footer>
 
-<style>
-#sidebar li, #similar_items_by_taxon li {
-    border-bottom: medium none !important;
-    border-top: medium none!important;
-}
-</style>
 
-</body>
+    <style>
+      #sidebar li, #similar_items_by_taxon li {
+        border-bottom: medium none !important;
+        border-top: medium none!important;
+      }
+      .footer 
+{
+    position: relative;
+    
+    height: 150px;
+    clear:both;
+    padding-top:20px;
+    color:#fff;
+} 
+    </style>
+
+  </body>
 </html>
