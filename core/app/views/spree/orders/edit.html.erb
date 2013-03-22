@@ -6,7 +6,7 @@
 
   <div data-hook="empty_cart">
     <p><%= t(:your_cart_is_empty) %></p>
-    <p><%= link_to t(:continue_shopping), products_path, :class => 'button continue' %></p>
+    <p><%= link_to t(:continue_shopping), products_path, :class => 'btn continue' %></p>
   </div>
 
 <% else %>
@@ -24,10 +24,10 @@
 
         <div class="links columns sixteen alpha omega" data-hook="cart_buttons" style = "margin-right:444px;">
 	<div style = "float:right" >
-          <%= button_tag :class => 'gray', :id => 'update-button' do %>
+          <%= button_tag :class => 'btn', :id => 'update-button' do %>
             <%= t(:update) %>
           <% end %>
-          <%= button_tag :class => 'button checkout gray', :id => 'checkout-link', :name => 'checkout' do %>
+          <%= button_tag :class => 'btn checkout', :id => 'checkout-link', :name => 'checkout' do %>
             <%= t(:checkout) %>
           <% end %>
 	</div>
@@ -39,10 +39,10 @@
 
   <div id="empty-cart" data-hook>
     <%= form_tag empty_cart_path, :method => :put do %>
-      <p id="clear_cart_link" data-hook style="margin-top: 23px;margin-left: 399px;">
-        <%= submit_tag t(:empty_cart), :class => 'button gray' ,:style=>"border-radius: 177px!important;"%>
+      <p id="clear_cart_link" data-hook style="margin-top: 45px;margin-left: 399px;">
+        <%= submit_tag t(:empty_cart), :class => 'btn' %>
         <%= t(:or) %>
-        <%= link_to t(:continue_shopping), products_path, :class => 'continue button gray' , :style=>"padding: 9px;color: white;text-decoration: none;
+        <%= link_to t(:continue_shopping), products_path, :class => 'continue btn' , :style=>"color: black;text-decoration: none;
 "%>
       </p>
     <% end %>
