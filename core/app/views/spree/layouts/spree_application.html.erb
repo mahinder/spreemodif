@@ -156,7 +156,10 @@ box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05) !impo
 input[type="submit"]:hover{
 color:black;
 }
-
+.navbar li:hover {
+    background-color: black;
+    color : white;
+    }
 .nav .active .dropdown-toggle .caret {
 border-top-color: black;
 border-bottom-color: black;
@@ -171,7 +174,7 @@ border-bottom-color: black;
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/"><%=image_tag("IUTFinalLogo.jpg",:width => "220")%></a>
+          <a class="brand" href="/">UGTREATS</a>
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active"><%= link_to root_path do %><i class="icon-home"></i>&nbsp;<%=t(:home)%> <%end%></li>
@@ -190,7 +193,7 @@ border-bottom-color: black;
       <div class = "row-fluid">	
         <div class = "row-fluid">
           <div class = "span3">
-            <%#= link_to image_tag("IUTFinalLogo.jpg",:width => "220") , "/" %>
+            <%= link_to image_tag("IUTFinalLogo.jpg",:width => "220") , "/" %>
           </div>
           <div class = "span9" style = "margin-left: 16px;">
             <div class = "row-fluid">	   
