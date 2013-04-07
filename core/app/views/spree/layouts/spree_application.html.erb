@@ -15,6 +15,14 @@
       });
     </script>
     <style>
+
+
+a.btn{
+text-transform: uppercase;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
       body{
         margin-top: 41px;
       }
@@ -126,7 +134,9 @@ input[type="submit"]{
 display: inline-block;
 padding: 4px 12px;
 margin-bottom: 0;
-font-size: 14px;
+ font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: normal;
 line-height: 20px;
 color: #333;
 text-align: center;
@@ -156,10 +166,9 @@ box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05) !impo
 input[type="submit"]:hover{
 color:black;
 }
-.navbar li:hover {
-    background-color: black;
-    color : white;
-    }
+.navbar .nav>li>a:hover {
+color: black;
+}
 .nav .active .dropdown-toggle .caret {
 border-top-color: black;
 border-bottom-color: black;
@@ -167,7 +176,7 @@ border-bottom-color: black;
     </style>
 
     <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner"style = "background : rgb(230, 230, 230);" >
+      <div class="navbar-inner" >
         <div class="container">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
