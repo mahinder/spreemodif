@@ -6,8 +6,18 @@ Spree::Core::Engine.routes.draw do
   resources :general
    get "/about_us" , :to => 'general#about_us'
  get "/contact_us" , :to => 'general#contact_us'
- get "/services" , :to => 'general#our_services'
+ get "/services" , :to => 'general#services'
  get "/private_polices" , :to => 'general#private_polices'
+   get "/about_us" , :to => 'general#about_us'
+ get "/contact_us" , :to => 'general#contact_us'
+ get "/services" , :to => 'general#services'
+ get "/private_polices" , :to => 'general#private_polices'
+get "/affilates" , :to => 'general#affilates'
+ get "/faq" , :to => 'general#faq'
+ get "/donation" , :to => 'general#donation'
+get "/sitemap" , :to => 'general#sitemap'
+ 
+	
  
   match '/locale/set', :to => 'locale#set'
   resources :states, :only => :index

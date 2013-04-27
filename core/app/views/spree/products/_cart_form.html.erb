@@ -1,6 +1,6 @@
-<%= form_for :order, :url => populate_orders_path do |f| %>
-  <div id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-
+<%= form_for :order, :url => populate_orders_path  ,:class=>"form-horizontal qtyFrm" do |f| %>
+  <div id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="http://schema.org/Offer" ,class = "control-group">
+fdgdf
     <% if @product.has_variants? %>
       <div id="product-variants" class="columns five alpha">
         <h6 class="product-section-title"><%= t(:variants) %></h6>
@@ -30,11 +30,11 @@
       <div data-hook="product_price" class="span12<% if !@product.has_variants? %> alpha <% else %> omega <% end %>">
       
         <div id="product-price" >
-  <div class = "span3">
+  <div style ="float:left">
           <h6 class="product-section-title"><%= t(:price) %></h6>
-          <div><span class="price selling" itemprop="price"><%= @product.price_in(current_currency).display_price %></span></div>
+          <label class="control-label"><span style="font-size: 18px !important;"><%= @product.price_in(current_currency).display_price %></lable>
 </div>
-<div class = "span9">
+<div style ="float:right">
         <div class="add-to-cart" >
           <% if @product.on_sale? %>      
             <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
