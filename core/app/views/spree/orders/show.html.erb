@@ -11,7 +11,7 @@
     <br class="clear" />
 
     <p data-hook="links">
-      <%= link_to t(:back_to_store), spree.root_path, :class => "button" %>
+      <%= link_to t(:back_to_store), spree.root_path, :class => "btn" %>
       <% unless params.has_key? :checkout_complete %>
         <% if try_spree_current_user && respond_to?(:spree_account_path) %>
           <%= link_to t(:my_account), spree_account_path, :class => "button" %>
