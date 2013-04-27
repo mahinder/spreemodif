@@ -31,7 +31,7 @@ margin-top: 37px;
 "><%= checkout_progress %></div>
   </div>
   <% if @order.state != 'confirm' %>
-      <div id="checkout-summary" data-hook="checkout_summary_box" class="span3">
+      <div id="" data-hook="checkout_summary_box" class="span3">
         <%= render :partial => 'summary', :locals => { :order => @order } %>
       </div>
    <% end %>
