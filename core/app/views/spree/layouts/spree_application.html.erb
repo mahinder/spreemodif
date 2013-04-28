@@ -39,10 +39,7 @@ font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 background: whitesmoke !important; 
 }
 
-#wrapper > #content {
-margin-left : 10px !important; 
-}
-    
+   
 #existing-customer, #new-customer, #forgot-password {
 padding-left:0px !important;
 } 
@@ -223,10 +220,10 @@ margin-left: 2px;
     <div class="container" >
       <div class = "row-fluid">	
         <div class = "row-fluid">
-          <div class = "span3">
+          <div style="float: left;">
             <%= link_to image_tag("IUTFinalLogo.jpg",:width => "220") , "/" %>
           </div>
-          <div class = "span9" style = "margin-left: 16px;">
+          <div style="margin-left: 24px;float: left;width: 79%;text-align: center;">
             <div class = "row-fluid">	   
               <%= render :partial => 'spree/shared/search' %>
             </div> 
@@ -282,7 +279,7 @@ margin-left: 2px;
 
 
 
-
+<hr/>
 <div id="footerSection">
 	<div class="container">
 		<div class="row-fluid">
