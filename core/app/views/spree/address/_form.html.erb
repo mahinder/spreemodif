@@ -1,12 +1,12 @@
 <% address_id = address_type.chars.first %>
 <div class="inner" data-hook=<%="#{address_type}_inner" %>>
-    <%= form.text_field :firstname, :class => 'required' ,:placeholder => t(:first_name), style:"width: 80%;"%>
-    <%= form.text_field :lastname, :class => 'required' ,:placeholder => t(:last_name) ,style:"width: 80%;"%>
+    <%= form.text_field :firstname, :class => 'required' ,:placeholder => t(:first_name)"%>
+    <%= form.text_field :lastname, :class => 'required' ,:placeholder => t(:last_name)%>
     <% if Spree::Config[:company] %>
       <%= form.text_field :company %>
     <% end %>
-    <%= form.text_field :address1, :class => 'required' ,:placeholder => t(:street_address),style:"width: 80%;" %>
-    <%= form.text_field :address2 ,:placeholder => t(:street_address_2),style:"width: 80%;"%>
+    <%= form.text_field :address1, :class => 'required' ,:placeholder => t(:street_address) %>
+    <%= form.text_field :address2 ,:placeholder => t(:street_address_2)%>
     <%= form.text_field :city, :class => 'required' ,:placeholder => t(:city)%>
     <%= form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'required',style:"width: 22%;"} %>
   
