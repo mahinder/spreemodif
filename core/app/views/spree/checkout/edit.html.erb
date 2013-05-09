@@ -1,9 +1,14 @@
 <style>
-
+#billing select, #shipping select {
+width: 22%;
+}
 input {
 border-radius: 7px !important;
 }
+container .column, .container .columns {
+float: center !important;
 
+}
  .progress-steps li span{
 		color: black;
 }
@@ -26,17 +31,17 @@ margin-top: 37px;
   <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
   
   <div class="row-fluid" data-hook="checkout_header">
-    <h1 class="columns three alpha" data-hook="checkout_title"><%= t(:checkout) %></h1>
+    <center><h1 class="columns three alpha" data-hook="checkout_title"><%= t(:checkout) %></h1></center>
     <div class="columns thirteen omega" data-hook="checkout_progress" style="margin-top: 27px;
 "><%= checkout_progress %></div>
   </div>
   <% if @order.state != 'confirm' %>
-      <div id="" data-hook="checkout_summary_box" class="span3">
+      <div id="" data-hook="checkout_summary_box" style = "margin-left: 500px;margin-top:40px;">
         <%= render :partial => 'summary', :locals => { :order => @order } %>
       </div>
    <% end %>
   <div class="row-fluid" data-hook="checkout_content">
-    <div class="columns <%= if @order.state != 'confirm' then 'span12' else 'alpha omega sixteen' end %>" data-hook="checkout_form_wrapper" style = "margin-top: 35px;">
+    <div class="columns <%= if @order.state != 'confirm' then 'span12' else 'alpha omega sixteen' end %>" data-hook="checkout_form_wrapper" style = "margin-top: 105px;">
      	 <%= form_for @order, :url => update_checkout_path(@order.state), :html => { :id => "checkout_form_#{@order.state}" } do |form| %>
 		<% unless @order.email? %>
 		  <p class="field" style='clear: both'>
