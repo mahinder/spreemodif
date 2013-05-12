@@ -1,27 +1,9 @@
 <script>
-$(function() {
-$('#selectidentity').on('click',function(){
-alert("asdsad")
-    	if($('#qs').attr('disabled') == true)
-    	{
-    		$('#qs').attr('disabled' , false)
-    	}
-   	else
-   	{
-         $('#qs').attr('disabled' , true)	
-     }
-    if($('#as').attr('disabled') == true)
-    {
-    	$('#as').attr('disabled' , false)
-    }
-   else
-   {
-         $('#as').attr('disabled' , true)	
-    }
-   })
-  }  	
-</script>
-
+$(document).ready(function() {
+	$('#qs').attr('disabled' , true)
+	$('#as').attr('disabled' , true)
+});
+</script
 
 <style>
 p[data-hook="use_billing"] {
@@ -59,15 +41,15 @@ padding: 5px;
  <fieldset  id = "identity" data-hook >
  	<legend align="center" style = "color:black;">Nead Identity</legend>
  <p class="field checkbox" data-hook="use_identity">         
-	<input type="checkbox" style = "float : center" id = "selectidentity" />
+	<input type="checkbox" style = "float : center" id = "selectidentity"  onclick = "if($('#qs').is(':disabled')){$('#qs').attr('disabled' , false)}else{ $('#qs').attr('disabled' , true)}  if($('#as').is(':disabled')) {$('#as').attr('disabled' , false)}	else	{$('#as').attr('disabled' , true)}" />
          <%= label_tag "Nead Identity","Nead Identity", :id => 'use_qns',:style => "background: none repeat scroll 0 0 white;
    padding: 4px;"%>
         </p>
 	<p class="field neadqnsans " style = "margin-top: 16px;">
     	 <%#= form.label :qus, "Question" %><br />
-   	 <%= form.text_field :qus ,:placeholder => "Question" , :id => 'qs' , :disabled => true%>
+   	 <%= form.text_field :qus ,:placeholder => "Question" , :id => 'qs' %>
   	 <%#= form.label :ans, "Answer" %><br />
-   	 <%= form.text_field :ans ,:placeholder => "Answer" , :id => 'as' , :disabled => true%>
+   	 <%= form.text_field :ans ,:placeholder => "Answer" , :id => 'as' %>
   	</p>
   </fieldset>
 </div>
