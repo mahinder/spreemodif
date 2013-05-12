@@ -1,3 +1,26 @@
+<script>
+$(function() {
+$('#selectidentity').on('click',function(){
+alert("asdsad")
+    	if($('#qs').attr('disabled') == true)
+    	{
+    		$('#qs').attr('disabled' , false)
+    	}
+   	else
+   	{
+         $('#qs').attr('disabled' , true)	
+     }
+    if($('#as').attr('disabled') == true)
+    {
+    	$('#as').attr('disabled' , false)
+    }
+   else
+   {
+         $('#as').attr('disabled' , true)	
+    }
+   })
+  }  	
+</script>
 
 
 <style>
@@ -36,7 +59,7 @@ padding: 5px;
  <fieldset  id = "identity" data-hook >
  	<legend align="center" style = "color:black;">Nead Identity</legend>
  <p class="field checkbox" data-hook="use_identity">         
-	<input type="checkbox" style = "float : center" id = "selectidentity">
+	<input type="checkbox" style = "float : center" id = "selectidentity" />
          <%= label_tag "Nead Identity","Nead Identity", :id => 'use_qns',:style => "background: none repeat scroll 0 0 white;
    padding: 4px;"%>
         </p>
@@ -52,27 +75,3 @@ padding: 5px;
 <div class="form-buttons" data-hook="buttons">
   <%= submit_tag t(:save_and_continue), :class => 'continue button primary' , :style=>"background: blue !important;color: wheat !important;" %>
 </div>
-<script>
-$(function() {
-$('selectidentity').on('click',function(){
-alert("asdsad")
-    	if($('#qs').attr('disabled') == true)
-    	{
-    		$('#qs').attr('disabled' , false)
-    	}
-   	else
-   	{
-         $('#qs').attr('disabled' , true)	
-     }
-    if($('#as').attr('disabled') == true)
-    {
-    	$('#as').attr('disabled' , false)
-    }
-   else
-   {
-         $('#as').attr('disabled' , true)	
-    }
-   })
-  }  	
-</script>
-
