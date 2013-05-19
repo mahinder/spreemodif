@@ -1,19 +1,19 @@
-<div class="row steps-data">
+<div class="row-fluid" style="margin-left: 10px;">
 
   <% if order.has_step?("address") %>
-    <div class="columns alpha four" data-hook="order-ship-address">
-      <h6><%= t(:shipping_address) %> <%= link_to "(#{t(:edit)})", checkout_state_path(:address) unless @order.completed? %></h6>
+    <div class="span4" data-hook="order-ship-address">
+      <h4><%= t(:shipping_address) %> <%= link_to "(#{t(:edit)})", checkout_state_path(:address) unless @order.completed? %></h4>
       <%= render :partial => 'spree/shared/address', :locals => { :address => order.ship_address } %>
     </div>
 
-    <div class="columns alpha four" data-hook="order-bill-address">
-      <h6><%= t(:billing_address) %> <%= link_to "(#{t(:edit)})", checkout_state_path(:address) unless @order.completed? %></h6>
+    <div class="span4" data-hook="order-bill-address">
+      <h4><%= t(:billing_address) %> <%= link_to "(#{t(:edit)})", checkout_state_path(:address) unless @order.completed? %></h4>
       <%= render :partial => 'spree/shared/address', :locals => { :address => order.bill_address } %>
     </div>
 
     <% if @order.has_step?("delivery") %>
-      <div class="columns alpha four">
-        <h6><%= t(:shipping_method) %> <%= link_to "(#{t(:edit)})", checkout_state_path(:delivery) unless @order.completed? %></h6>
+      <div class="span4">
+        <h4><%= t(:shipping_method) %> <%= link_to "(#{t(:edit)})", checkout_state_path(:delivery) unless @order.completed? %></h4>
         <div class="delivery">
           <%= order.shipping_method.name %>
         </div>
@@ -22,7 +22,7 @@
   <% end %>
 
   <div class="columns omega four">
-    <h6><%= t(:payment_information) %> <%= link_to "(#{t(:edit)})", checkout_state_path(:payment) unless @order.completed? %></h6>
+    <h4><%= t(:payment_information) %> <%= link_to "(#{t(:edit)})", checkout_state_path(:payment) unless @order.completed? %></h4>
     <div class="payment-info">
       <% if order.credit_cards.empty? %>
         <%= content_tag(:span, order.payment.payment_method.name) if order.payment %>
@@ -78,16 +78,16 @@
           <%= truncate_html(raw(item.variant.product.description), :length => 100, :omission => "...") %>
           <%= "(" + item.variant.options_text + ")" unless item.variant.option_values.empty? %>
         </td>
-        <td data-hook="order_item_price" class="price"><span><%= item.variant.display_amount %></span></td>
+        <td data-hook="order_item_price" class="price"><span style="color: black;font-size: 17px !important;"><%= item.variant.display_amount %></span></td>
         <td data-hook="order_item_qty"><%= item.quantity %></td>
-        <td data-hook="order_item_total" class="total"><span><%= item.display_amount %></span></td>
+        <td data-hook="order_item_total" class="total"><span style="color: black  !important;font-size: 17px !important;"><%= item.display_amount %></span></td>
       </tr>
     <% end %>
   </tbody>
   <tfoot id="order-total" data-hook="order_details_total">
     <tr class="total">
       <td colspan="4"><b><%= t(:order_total) %>:</b></td>
-      <td class="total"><span id="order_total"><%= @order.display_total %></span></td>
+      <td class="total"><span id="order_total" style="color: black  !important;font-size: 17px !important;"> <%= @order.display_total %></span></td>
     </tr>
   </tfoot>
   <% if order.price_adjustment_totals.present? %>
@@ -103,7 +103,7 @@
   <tfoot id="subtotal" data-hook="order_details_subtotal">
     <tr class="total" id="subtotal-row">
       <td colspan="4"><b><%= t(:subtotal) %>:</b></td>
-      <td class="total"><span><%= @order.display_item_total %></span></td>
+      <td class="total"><span style="color: black  !important;font-size: 17px !important;"><%= @order.display_item_total %></span></td>
     </tr>
   </tfoot>
   <tfoot id="order-charges" data-hook="order_details_adjustments">

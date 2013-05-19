@@ -5,17 +5,7 @@ $(document).ready(function() {
 });
 </script
 
-<style>
-p[data-hook="use_billing"] {
-float: none;
-width: 127px;
-padding: 5px;
-}
 
-p[data-hook="use_identity"] {
-padding: 5px;
-}
-</style>
 <div class="row-fluid" data-hook="billing_fieldset_wrapper">
   <fieldset id="billing" data-hook>
     <%= form.fields_for :bill_address do |bill_form| %>
@@ -54,6 +44,18 @@ padding: 5px;
   </fieldset>
 </div>
 <hr class="clear" />
-<div class="form-buttons" data-hook="buttons">
+<div class="form-buttons" data-hook="buttons" style=" text-align: center;">
   <%= submit_tag t(:save_and_continue), :class => 'continue button primary' , :style=>"background: blue !important;color: wheat !important;" %>
 </div>
+
+<style>
+	p[data-hook="use_billing"] {
+		float: none;
+		width: 127px;
+		padding: 5px;
+	}
+
+p[data-hook="use_identity"] {
+	padding: 5px;
+}
+</style>
