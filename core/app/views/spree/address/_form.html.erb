@@ -1,5 +1,12 @@
+<style>
+.progress-steps li {
+border-color: rgb(179, 179, 179) !important;
+border: solid;
+}
+</style>
 <% address_id = address_type.chars.first %>
 <div class="inner" data-hook=<%="#{address_type}_inner" %>>
+<div class = "span6">
  <p class="field" id=<%="#{address_id}firstname" %>>
     <%= form.text_field :firstname, :class => 'required' ,:placeholder => t(:first_name)%>
 </p>
@@ -20,7 +27,9 @@
   <p class="field" id=<%="#{address_id}city" %>>
     <%= form.text_field :city, :class => 'required' ,:placeholder => t(:city)%>
     </p>
-  <p class="field" id=<%="#{address_id}country" %>>
+</div>
+<div class = "span6">  
+<p class="field" id=<%="#{address_id}country" %>>
   <span id=<%="#{address_id}country-selection" %>>
     <%= form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'required',style:"width: 22%;"} %>
    </span>
@@ -57,5 +66,6 @@
   <p class="field" id=<%="#{address_id}altphone" %>>
         <%= form.phone_field :alternative_phone,:placeholder => t(:alternative_phone) %>
         </p>
+</div>
   <% end %>
 </div>

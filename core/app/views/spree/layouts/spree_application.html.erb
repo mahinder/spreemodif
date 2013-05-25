@@ -12,7 +12,14 @@
       $(function(){
         $('#guest_checkout input[type=submit]').css({'border': 'gray' , 'background':'gray'})
         $('.carousel').carousel();
+
+$('#link-to-cart a').prepend('<i class="icon-shopping-cart"></i>')
+$("a:contains('Logout')").prepend('<i class="icon-user"></i>')
+$("a:contains('Login')").prepend('<i class="icon-user"></i>')
       });
+
+
+
 
     </script>
     <style>
@@ -30,6 +37,7 @@ color: black;
       body{
   	background: #fafafa url("http://s3.amazonaws.com/wrapbootstrap/live/imgs/content_inner_bg.png");
 	margin: 0;
+	margin-top : 10px;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 13px;
 	font-weight: normal;
@@ -228,19 +236,20 @@ margin-left: 2px;
           <div style="margin-left: 24px;float: left;width: 79%;text-align: center;">
             <div class = "row-fluid">	   
               <%= render :partial => 'spree/shared/search' %>
+
             </div> 
           </div>
         </div>
-        <div id="promo-sale-container" class="row-fluid" style="top: 83px;position: absolute;">
+        <div id="promo-sale-container" class="row-fluid" style="top: 142px;position: absolute;">
           <div id="promo-sale"><!--InstanceBeginEditable name="Content" -->
-            <div class="column1" style = "float: left;"><img src="/assets/ribbon-left.png" width="664" height="28"></div>
-            <div class="column2"><img src="/assets/bow.png" width="164" height="104" style="float: left;margin-top: -17px;float: left;"></div>
-            <div class="column3"><img src="/assets/ribbon-right.png" alt="Click For Details" width="342" height="28"></div>
+            <div class="column1" style = "float: left;"><img src="/assets/ribbon-left.png" width="647" height="28"></div>
+            <div class="column2"><img src="/assets/bow.png" width="206" height="206" style="float: left;margin-top: -40px;float: left;"></div>
+            <div class="column3"><img src="/assets/ribbon-right.png" alt="Click For Details" width="316" height="28"></div>
           </div>
         </div>
 
 
-<div class="navbar" style="margin-top: 28px;margin-bottom: 0px;">
+<div class="navbar" style="margin-top: 19px;margin-bottom: 0px;">
     <div class="navbar-inner">
       <div>
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -257,7 +266,7 @@ margin-left: 2px;
               <li><a href="/services"><i class="icon-upload"></i> services</a></li>
 	   </ul>
 	   <ul class = "pull-right nav">	
-              <li id="link-to-cart" data-hook><%= link_to_cart  do %> <i class="icon-upload"></i><%end%></li>
+              <li id="link-to-cart" data-hook><%= link_to_cart %></li>
               <%= render :partial => 'spree/shared/nav_bar' %>
             </ul>
           </div><!--/.nav-collapse -->
