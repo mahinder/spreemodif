@@ -26,6 +26,9 @@
     <%= line_item.display_amount unless line_item.quantity.nil? %>
   </td>
   <td class="cart-item-delete" data-hook="cart_item_delete">
-    <%= link_to image_tag('icons/delete.png'), '#', :class => 'delete', :id => "delete_#{dom_id(line_item)}" %>
+    <%= link_to  '#', :class => 'btn btn-danger', :id => "delete_#{dom_id(line_item)}" do %>
+	<i class="icon-trash icon-white"></i>
+	Delete
+    <%end%>
   </td>
 </tr>
