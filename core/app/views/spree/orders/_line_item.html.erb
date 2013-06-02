@@ -1,3 +1,10 @@
+<style>
+table#cart-detail tbody#line_items tr td[data-hook="cart_item_delete"] .delete{
+display: block;
+width: 89px !important;
+}
+</style>
+
 <tr class="<%= cycle('', 'alt') %> line-item">
   <td class="cart-item-image" data-hook="cart_item_image">
     <% if variant.images.length == 0 %>
@@ -26,9 +33,9 @@
     <%= line_item.display_amount unless line_item.quantity.nil? %>
   </td>
   <td class="cart-item-delete" data-hook="cart_item_delete">
-    <%= link_to  '#', :class => 'btn btn-danger', :id => "delete_#{dom_id(line_item)}" do %>
+    <%= link_to  '', :class => 'delete btn btn-danger', :id => "delete_#{dom_id(line_item)}" do %> 
 	<i class="icon-trash icon-white"></i>
 	Delete
-    <%end%>
+	<%end%>
   </td>
 </tr>
